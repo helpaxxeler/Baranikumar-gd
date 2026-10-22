@@ -44,12 +44,12 @@ export const siteConfig = {
     action: "Explore AxxChat",
   },
   partner: {
-    name: "Outcatlyst",
+    name: "Ouncatalyst",
     category: "Partnering Venture",
     description:
-      "Explore Outcatlyst, a collaborating venture in the wider network of projects.",
+      "Explore Ouncatalyst, a collaborating venture in the wider network of projects.",
     website: "https://outcatlyst.vercel.app/",
-    action: "Visit Outcatlyst",
+    action: "Visit Ouncatalyst",
   },
   social: [
     {
