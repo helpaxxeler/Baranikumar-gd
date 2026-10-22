@@ -7,10 +7,11 @@ export const siteConfig = {
   portrait: "/images/barani-kumar.png",
   contact: {
     name: "Barani Kumar G",
-    email: "gbaranikumar2@gmail.com",
+    email: "barani@axxeler.in",
     phone: "+91 86104 18890",
-    emailUrl: "mailto:gbaranikumar2@gmail.com",
+    emailUrl: "mailto:barani@axxeler.in",
     telephoneUrl: "tel:+918610418890",
+    whatsappNumber: "918610418890",
   },
   businesses: [
     {
@@ -66,11 +67,11 @@ export const siteConfig = {
       url: "https://www.youtube.com/@baranikumargd",
     },
     {
-      platform: "instagram",
-      name: "Young Founder Podcast",
-      label: "Instagram",
-      action: "Follow on Instagram",
-      url: "https://www.instagram.com/youngfounderpodcast/",
+      platform: "linkedin",
+      name: "Barani Kumar G",
+      label: "LinkedIn",
+      action: "Connect on LinkedIn",
+      url: "https://www.linkedin.com/in/baranikumargd?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     },
   ],
 } as const;

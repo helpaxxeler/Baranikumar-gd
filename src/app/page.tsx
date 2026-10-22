@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
 import { BrandIcon } from "@/components/BrandIcon";
 import { TiltCard } from "@/components/TiltCard";
 import { siteConfig } from "@/config/site";
@@ -351,6 +352,53 @@ function SocialSection() {
   );
 }
 
+function ContactForm() {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const fields = new FormData(event.currentTarget);
+    const message = [
+      "Hello Barani, I'd like to discuss a project.",
+      "",
+      `Name: ${String(fields.get("name") ?? "")}`,
+      `Email: ${String(fields.get("email") ?? "")}`,
+      `Phone: ${String(fields.get("phone") ?? "")}`,
+      `Service: ${String(fields.get("service") ?? "")}`,
+    ].join("\n");
+    window.location.assign(
+      `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${encodeURIComponent(message)}`,
+    );
+  }
+
+  return (
+    <form className="contact-form" onSubmit={handleSubmit}>
+      <label>
+        <span>Name</span>
+        <input autoComplete="name" name="name" placeholder="Your name" required />
+      </label>
+      <label>
+        <span>Email address</span>
+        <input autoComplete="email" name="email" placeholder="you@example.com" required type="email" />
+      </label>
+      <label>
+        <span>Phone number</span>
+        <input autoComplete="tel" name="phone" placeholder="Your phone number" required type="tel" />
+      </label>
+      <label>
+        <span>Service</span>
+        <select defaultValue="" name="service" required>
+          <option disabled value="">Choose a service</option>
+          <option>Axxeler Media — Marketing</option>
+          <option>Axxeler AI — Automation</option>
+          <option>AxxChat</option>
+          <option>Partnership or other</option>
+        </select>
+      </label>
+      <button className="contact-submit" type="submit">Continue to WhatsApp <ArrowIcon /></button>
+      <p className="form-note">Your details will be added to a WhatsApp message for you to review and send.</p>
+    </form>
+  );
+}
+
 function ContactSection() {
   return (
     <section className="contact-section section-shell" id="contact">
@@ -362,6 +410,7 @@ function ContactSection() {
         <a className="button button-primary" href={siteConfig.contact.emailUrl}><ContactIcon type="email" /><span><strong>Email Me</strong><small>{siteConfig.contact.email}</small></span></a>
         <a className="button button-quiet" href={siteConfig.contact.telephoneUrl}><ContactIcon type="phone" /><span><strong>Call Me</strong><small>{siteConfig.contact.phone}</small></span></a>
       </div>
+      <ContactForm />
     </section>
   );
 }
