@@ -246,7 +246,7 @@ function ProductAndPartner() {
         />
         <TiltCard className="feature-card product-card">
         <div className="feature-art product-art" aria-hidden="true">
-            <div className="brand-logo-frame feature-logo-frame"><div className="product-mark">A<span>x</span></div></div>
+            <div className="brand-logo-frame feature-logo-frame"><div className="product-mark">AxxChat</div></div>
             <div className="product-ring ring-a" />
             <div className="product-ring ring-b" />
           </div>
