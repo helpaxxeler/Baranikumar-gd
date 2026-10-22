@@ -1,0 +1,76 @@
+export const siteConfig = {
+  name: "Barani Kumar G",
+  role: "Founder · Builder · Entrepreneur",
+  headline: ["Building Brands.", "Automating Growth."],
+  introduction:
+    "I build businesses at the intersection of digital marketing, AI automation, and technology — turning ideas into brands, products, and intelligent systems.",
+  portrait: "/images/barani-kumar.png",
+  contact: {
+    name: "Barani Kumar G",
+    email: "gbaranikumar2@gmail.com",
+    phone: "+91 86104 18890",
+    emailUrl: "mailto:gbaranikumar2@gmail.com",
+    telephoneUrl: "tel:+918610418890",
+  },
+  businesses: [
+    {
+      name: "Axxeler Media",
+      category: "Digital Marketing Agency",
+      description:
+        "Creative marketing, brand growth, and digital experiences designed to help businesses stand out.",
+      website: "https://mediaa.axxeler.in/",
+      instagram: "https://www.instagram.com/theaxxelermedia/",
+      logo: "/images/brands/processed/axxeler-media.png",
+      action: "Explore Axxeler Media",
+    },
+    {
+      name: "Axxeler",
+      category: "AI Automation Agency",
+      description:
+        "Intelligent workflows, AI agents, and business automation systems built to simplify operations and accelerate growth.",
+      website: "https://axxeler.in/",
+      instagram: "https://www.instagram.com/axxeler.in/",
+      logo: "/images/brands/processed/axxeler-ai.png",
+      action: "Explore Axxeler AI",
+    },
+  ],
+  product: {
+    name: "AxxChat",
+    category: "WhatsApp Automation Platform",
+    description:
+      "A business communication platform designed to streamline WhatsApp conversations and customer engagement.",
+    website: "https://chat.axxeler.in/",
+    action: "Explore AxxChat",
+  },
+  partner: {
+    name: "Outcatlyst",
+    category: "Partnering Venture",
+    description:
+      "Explore Outcatlyst, a collaborating venture in the wider network of projects.",
+    website: "https://outcatlyst.vercel.app/",
+    action: "Visit Outcatlyst",
+  },
+  social: [
+    {
+      platform: "instagram",
+      name: "Barani Kumar G",
+      label: "Instagram",
+      action: "Follow on Instagram",
+      url: "https://www.instagram.com/baranikumargd/",
+    },
+    {
+      platform: "youtube",
+      name: "Barani Kumar G",
+      label: "YouTube",
+      action: "Subscribe on YouTube",
+      url: "https://www.youtube.com/@baranikumargd",
+    },
+    {
+      platform: "instagram",
+      name: "Young Founder Podcast",
+      label: "Instagram",
+      action: "Follow on Instagram",
+      url: "https://www.instagram.com/youngfounderpodcast/",
+    },
+  ],
+} as const;
