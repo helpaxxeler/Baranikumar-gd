@@ -305,10 +305,7 @@ function AboutSection() {
         <span className="section-index">04 — A LITTLE ABOUT ME</span>
         <h2>A Little About Me</h2>
         <p>
-          I&apos;m an entrepreneur focused on building businesses across
-          digital marketing, AI automation, and technology. I enjoy exploring
-          new ideas, developing practical systems, and turning opportunities
-          into products and services that create value.
+          Building smart AI automation systems and powerful digital marketing strategies that help businesses grow faster. Focused on creating innovative solutions, streamlining workflows, and turning creative ideas into real-world results. Combining technology, automation, and marketing to build smarter, scalable business solutions.
         </p>
       </div>
       <span className="about-side-note">CURIOUS BY NATURE. BUILT TO BUILD.</span>
