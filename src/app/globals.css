@@ -207,11 +207,11 @@ html[data-theme="dark"] .portrait-frame::after { background: linear-gradient(tra
 html[data-theme="dark"] .portrait-orbit { border-color: #4a4852; }
 html[data-theme="dark"] .portrait-crosshair { border-color: var(--accent); }
 html[data-theme="dark"] .business-card, html[data-theme="dark"] .partner-card, html[data-theme="dark"] .social-card { border-color: var(--border); background: #18181e; }
-html[data-theme="dark"] .business-card { border-color: #4a4658; box-shadow: inset 0 0 0 1px rgba(161,140,255,.08); }
-html[data-theme="dark"] .business-card:hover { border-color: rgba(161,140,255,.55); }
-html[data-theme="dark"] .brand-logo-frame { border-color: #5a5666; background: #d4d2db; }
-html[data-theme="dark"] .brand-logo-frame::after { background: #d4d2db; }
-html[data-theme="dark"] .business-logo { opacity: .9; mix-blend-mode: multiply; }
+html[data-theme="dark"] .business-card { border-color: rgba(161,140,255,.38); box-shadow: 0 0 0 1px rgba(161,140,255,.08), 0 12px 32px rgba(0,0,0,.28); }
+html[data-theme="dark"] .business-card:hover { border-color: rgba(161,140,255,.8); box-shadow: 0 0 0 1px rgba(161,140,255,.28), 0 0 28px rgba(161,140,255,.16), 0 16px 40px rgba(0,0,0,.34); }
+html[data-theme="dark"] .brand-logo-frame { border-color: #4a4852; background: #fff; }
+html[data-theme="dark"] .business-card .brand-logo-frame { border-color: rgba(161,140,255,.22); background: transparent; }
+html[data-theme="dark"] .business-card .brand-logo-frame::after { background: #18181e; }
 html[data-theme="dark"] .card-actions { border-color: var(--border); }
 html[data-theme="dark"] .mini-social { color: var(--text-soft); }
 html[data-theme="dark"] .feature-card { border-color: var(--border); background: #19191f; }
