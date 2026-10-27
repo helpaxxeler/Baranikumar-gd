@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { BrandIcon } from "@/components/BrandIcon";
 import { TiltCard } from "@/components/TiltCard";
@@ -122,6 +122,8 @@ function SectionHeading({
 }
 
 function Hero() {
+  const [contactOpen, setContactOpen] = useState(false);
+
   return (
     <section className="hero section-shell" id="home">
       <div className="hero-copy">
@@ -139,9 +141,9 @@ function Hero() {
           <a className="button button-primary" href="#ventures">
             Explore My Ventures <ArrowIcon />
           </a>
-          <a className="button button-quiet" href="#social">
+          <button className="button button-quiet" onClick={() => setContactOpen(true)} type="button">
             Connect With Me
-          </a>
+          </button>
         </div>
         <div className="hero-footnote">
           <span className="status-dot" />
@@ -172,6 +174,7 @@ function Hero() {
         <span className="scroll-cue-line" />
         Scroll to explore
       </a>
+      <ContactModal onClose={() => setContactOpen(false)} open={contactOpen} />
     </section>
   );
 }
@@ -396,6 +399,39 @@ function ContactForm() {
   );
 }
 
+function ContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (open && !dialog.open) dialog.showModal();
+    if (!open && dialog.open) dialog.close();
+  }, [open]);
+
+  return (
+    <dialog
+      aria-labelledby="contact-modal-title"
+      className="contact-modal"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+      onClose={onClose}
+      ref={dialogRef}
+    >
+      <div className="contact-modal-body">
+        <button aria-label="Close contact form" className="contact-modal-close" onClick={onClose} type="button">
+          ×
+        </button>
+        <span className="section-index">LET&apos;S CONNECT</span>
+        <h2 id="contact-modal-title">Tell me about your project.</h2>
+        <p>Share a few details and continue the conversation on WhatsApp.</p>
+        <ContactForm />
+      </div>
+    </dialog>
+  );
+}
+
 function ContactSection() {
   return (
     <section className="contact-section section-shell" id="contact">
@@ -407,7 +443,6 @@ function ContactSection() {
         <a className="button button-primary" href={siteConfig.contact.emailUrl}><ContactIcon type="email" /><span><strong>Email Me</strong><small>{siteConfig.contact.email}</small></span></a>
         <a className="button button-quiet" href={siteConfig.contact.telephoneUrl}><ContactIcon type="phone" /><span><strong>Call Me</strong><small>{siteConfig.contact.phone}</small></span></a>
       </div>
-      <ContactForm />
     </section>
   );
 }

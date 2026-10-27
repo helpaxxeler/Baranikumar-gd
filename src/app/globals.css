@@ -56,6 +56,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #111; outline-offset:
 .button-primary:hover { background: var(--accent-hover); }
 .button-quiet { border-color: #aaa; color: #111; }
 .button-quiet:hover { border-color: #111; background: #f7f7f7; }
+button.button-quiet { background: transparent; cursor: pointer; }
 .hero-footnote { display: flex; align-items: center; gap: 9px; margin-top: 37px; color: var(--text-muted); font-size: 10px; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
 .portrait-stage { position: relative; width: min(100%, 440px); justify-self: end; padding: 22px 18px 38px; }
@@ -206,8 +207,11 @@ html[data-theme="dark"] .portrait-frame::after { background: linear-gradient(tra
 html[data-theme="dark"] .portrait-orbit { border-color: #4a4852; }
 html[data-theme="dark"] .portrait-crosshair { border-color: var(--accent); }
 html[data-theme="dark"] .business-card, html[data-theme="dark"] .partner-card, html[data-theme="dark"] .social-card { border-color: var(--border); background: #18181e; }
-html[data-theme="dark"] .brand-logo-frame { border-color: #4a4852; background: #fff; }
-html[data-theme="dark"] .business-card .brand-logo-frame { background: #fff; }
+html[data-theme="dark"] .business-card { border-color: #4a4658; box-shadow: inset 0 0 0 1px rgba(161,140,255,.08); }
+html[data-theme="dark"] .business-card:hover { border-color: rgba(161,140,255,.55); }
+html[data-theme="dark"] .brand-logo-frame { border-color: #5a5666; background: #d4d2db; }
+html[data-theme="dark"] .brand-logo-frame::after { background: #d4d2db; }
+html[data-theme="dark"] .business-logo { opacity: .9; mix-blend-mode: multiply; }
 html[data-theme="dark"] .card-actions { border-color: var(--border); }
 html[data-theme="dark"] .mini-social { color: var(--text-soft); }
 html[data-theme="dark"] .feature-card { border-color: var(--border); background: #19191f; }
@@ -250,3 +254,17 @@ html[data-theme="dark"] .contact-submit { color: #17131f; }
 html[data-theme="dark"] .form-note { color: #c0bec9; }
 @media (max-width: 640px) { .contact-form { grid-template-columns: 1fr; gap: 13px; margin-top: 25px; padding-top: 21px; } .form-note { grid-column: auto; } .contact-submit { width: 100%; min-height: 52px; } .contact-section { padding-inline: 18px; } }
 @media (max-width: 640px) { .menu-toggle { flex: 0 0 auto; margin-left: auto; } .theme-toggle { flex: 0 0 auto; margin-left: 8px; } }
+.contact-modal { width: min(640px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 1px solid #e3dcff; border-radius: 18px; background: #f5f2ff; color: #111; box-shadow: var(--shadow); }
+.contact-modal::backdrop { background: rgba(10,10,14,.55); backdrop-filter: blur(4px); }
+.contact-modal-body { position: relative; padding: 38px 36px 32px; }
+.contact-modal .section-index { color: #6045c5; }
+.contact-modal h2 { margin: 12px 0 0; font-size: clamp(26px, 4vw, 34px); font-weight: 600; letter-spacing: -.05em; line-height: 1.15; }
+.contact-modal-body > p { margin: 10px 0 0; color: #555; font-size: 12px; line-height: 1.8; }
+.contact-modal .contact-form { max-width: none; margin-top: 22px; padding-top: 22px; }
+.contact-modal-close { position: absolute; top: 14px; right: 14px; display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid #d2cbea; border-radius: 50%; background: transparent; color: inherit; font-size: 20px; line-height: 1; cursor: pointer; transition: border-color var(--ease), background var(--ease); }
+.contact-modal-close:hover { border-color: var(--accent); background: rgba(114,87,232,.08); }
+html[data-theme="dark"] .contact-modal { border-color: #493b78; background: #17151f; color: #fff; }
+html[data-theme="dark"] .contact-modal .section-index { color: #c1b6ff; }
+html[data-theme="dark"] .contact-modal-body > p { color: #dedbe8; }
+html[data-theme="dark"] .contact-modal-close { border-color: #4b465c; }
+@media (max-width: 640px) { .contact-modal-body { padding: 30px 18px 22px; } }
